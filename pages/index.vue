@@ -27,7 +27,14 @@
             loading="lazy"
           />
           <ul class="discs-caroussel__control">
-            <li class="discs-caroussel__control__item" v-for="(disc, index) in discs" :key="index"></li>
+            <li
+              :class="currentDiscIndex === index
+                ? 'discs-caroussel__control__item--active'
+                : 'discs-caroussel__control__item'"
+              v-for="(disc, index) in discs"
+              @click="currentDiscIndex = index"
+              :key="index">
+            </li>
           </ul>
         </div>
       </div>
@@ -63,6 +70,9 @@
         </li>
       </ul>
     </section>
+    <section class="page-section">
+      <h2 class="page-section__title">Sobre</h2>
+    </section>
   </div>
 </template>
 
@@ -70,6 +80,11 @@
 import Vue from 'vue'
 
 export default Vue.extend({
+  created() {
+    setInterval(() => {
+      this.currentDiscIndex = (this.currentDiscIndex + 1) % this.discs.length;
+    }, 2500)
+  },
   async asyncData({$axios}) {
 
     const getUrl = (method: 'discs' | 'numbers') => {
@@ -179,11 +194,18 @@ export default Vue.extend({
   margin-right: auto;
 }
 
-.discs-caroussel__control__item {
+.discs-caroussel__control__item,
+.discs-caroussel__control__item--active {
+  cursor: pointer;
   width: 10px;
   height: 10px;
   background: var(--color-white);
   border-radius: 50%;
+  opacity: .5;
+}
+
+.discs-caroussel__control__item--active {
+  opacity: 1;
 }
 
 /**/
