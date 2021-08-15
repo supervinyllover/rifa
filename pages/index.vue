@@ -82,7 +82,7 @@ import Vue from 'vue'
 export default Vue.extend({
   created() {
     setInterval(() => {
-      this.currentDiscIndex = (this.currentDiscIndex + 1) % this.discs.length;
+      (this as any).currentDiscIndex = ((this as any).currentDiscIndex + 1) % (this as any).discs.length;
     }, 2500)
   },
   async asyncData({$axios}) {
