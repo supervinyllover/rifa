@@ -45,7 +45,7 @@
         <div class="discs-grid">
           <img
             v-for="(disc, index) in discs" :key="index"
-            class="discs-caroussel__image"
+            class="discs-grid__image"
             :src="disc.imageSmall"
             alt="Capa de disco"
             width="300"
@@ -108,11 +108,18 @@ export default Vue.extend({
 
 .hero {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   max-width: 1240px;
   margin-left: auto;
   margin-right: auto;
   min-height: calc(100vh - 60px);
+}
+
+@media (min-width: 768px) {
+  .hero {
+    flex-direction: row;
+  }
 }
 
 .hero__title {
@@ -222,12 +229,19 @@ export default Vue.extend({
 .raffle__item,
 .raffle__item--inactive {
   border: 1px solid #fff;
-  width: calc(10% - 3px);
+  width: calc(20% - 3px);
   line-height: 60px;
   justify-content: center;
   display: flex;
   cursor: pointer;
   transition: all ease-in-out .2s;
+}
+
+@media (min-width: 768px) {
+  .raffle__item,
+  .raffle__item--inactive {
+    width: calc(10% - 3px);
+  }
 }
 
 .raffle__item:hover {
@@ -239,6 +253,16 @@ export default Vue.extend({
   opacity: .1;
   cursor: initial;
 }
+/**/
+.discs-grid {
+  display: flex;
+  max-width: 100%;
+  flex-wrap: wrap;
+  gap: 10px;
+}
 
+.discs-grid__image {
+  max-width: calc(50% - 10px);
+}
 
 </style>
