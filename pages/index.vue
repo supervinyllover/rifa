@@ -11,12 +11,12 @@
 
 <script lang="ts">
 import Vue from 'vue'
-import Hero from '~/components/Hero'
-import Raffle from '~/components/Raffle'
-import DiscsGrid from '~/components/DiscsGrid'
-import About from '~/components/About'
-import PageFooter from '~/components/PageFooter'
-import FAQ from '~/components/FAQ'
+import Hero from '~/components/Hero.vue'
+import Raffle from '~/components/Raffle.vue'
+import DiscsGrid from '~/components/DiscsGrid.vue'
+import About from '~/components/About.vue'
+import PageFooter from '~/components/PageFooter.vue'
+import FAQ from '~/components/FAQ.vue'
 
 export default Vue.extend({
   components: {
