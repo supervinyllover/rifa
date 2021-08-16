@@ -28,11 +28,17 @@ export default Vue.extend({
     FAQ,
     PageFooter
   },
+  data() {
+    return {
+      raffle: []
+    }
+  },
+  async mounted() {
+    (this as any).raffle = await fetch(getUrl('numbers')).then(response => response.json())
+  },
   async asyncData({$axios}) {
-
     return {
       discs: await $axios.$get(getUrl('discs')),
-      raffle: await $axios.$get(getUrl('numbers')),
       about: await $axios.$get(getUrl('about')),
       faq: await $axios.$get(getUrl('faq'))
     }
