@@ -17,6 +17,7 @@ import DiscsGrid from '~/components/DiscsGrid.vue'
 import About from '~/components/About.vue'
 import PageFooter from '~/components/PageFooter.vue'
 import FAQ from '~/components/FAQ.vue'
+import {getUrl} from '~/modules/Utils'
 
 export default Vue.extend({
   components: {
@@ -28,11 +29,6 @@ export default Vue.extend({
     PageFooter
   },
   async asyncData({$axios}) {
-
-    const getUrl = (method: 'discs' | 'numbers' | 'about' | 'faq') => {
-      const macroId = 'AKfycbxOGHWJzv9m7vC4CgoD0elthQNOih5Fa1bYv5LSyIC0FCcKOUxfu2q51p_4HHeTj3aw8w';
-      return `https://script.google.com/macros/s/${macroId}/exec?method=${method}`;
-    }
 
     return {
       discs: await $axios.$get(getUrl('discs')),
