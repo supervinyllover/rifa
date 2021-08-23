@@ -38,5 +38,6 @@ export default Vue.extend({
 
 .discs-grid__image {
   max-width: calc(50% - 10px);
+  height: auto;
 }
 </style>
