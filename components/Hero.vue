@@ -112,6 +112,8 @@ export default Vue.extend({
 
 .discs-caroussel__image {
   margin: auto;
+  max-width: 100%;
+  height: auto;
 }
 
 .discs-caroussel__control {
@@ -122,6 +124,7 @@ export default Vue.extend({
   padding: 0;
   margin-top: 20px;
   margin-left: auto;
+  flex-wrap: wrap;
   margin-right: auto;
 }
 

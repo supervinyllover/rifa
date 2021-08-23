@@ -39,7 +39,15 @@
   justify-content: center;
   align-items: center;
   padding: 20px;
+  gap: 20px;
   text-decoration: none;
+  flex-direction: column;
+}
+
+@media(min-width: 768px) {
+  .social-icons {
+    flex-direction: row;
+  }
 }
 
 .social-icon__name {

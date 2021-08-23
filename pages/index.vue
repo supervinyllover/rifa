@@ -56,6 +56,7 @@ export default Vue.extend({
   flex-direction: column;
   margin: auto;
   align-items: center;
+  padding: 20px;
 
 }
 .page-section__content {
