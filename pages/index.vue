@@ -6,6 +6,7 @@
     <About :about="about" />
     <FAQ :faq="faq" />
     <PageFooter />
+    <WhatsAppButton />
   </div>
 </template>
 
@@ -17,6 +18,7 @@ import DiscsGrid from '~/components/DiscsGrid.vue'
 import About from '~/components/About.vue'
 import PageFooter from '~/components/PageFooter.vue'
 import FAQ from '~/components/FAQ.vue'
+import WhatsAppButton from '~/components/WhatsAppButton.vue'
 import {getUrl} from '~/modules/Utils'
 
 export default Vue.extend({
@@ -26,7 +28,8 @@ export default Vue.extend({
     DiscsGrid,
     About,
     FAQ,
-    PageFooter
+    PageFooter,
+    WhatsAppButton
   },
   data() {
     return {
