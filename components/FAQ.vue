@@ -7,9 +7,7 @@
           <summary class="faq__question">
             {{question.pergunta}}
           </summary>
-          <p class="faq__answer">
-            {{question.resposta}}
-          </p>
+          <p class="faq__answer" v-html="marked(question.resposta)" />
         </details>
       </div>
     </div>
@@ -18,11 +16,18 @@
 
 <script type="ts">
 import Vue from 'vue'
+import marked from 'marked'
+
 export default Vue.extend({
   props: {
     faq: {
       type: Array,
       required: true
+    }
+  },
+  data() {
+    return {
+      marked
     }
   }
 })
