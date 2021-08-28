@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Hero :discs="discs" />
+    <Hero :discs="discs" :text="home" />
     <DiscsGrid :discs="discs" />
     <Raffle :raffle="raffle" />
     <About :about="about" />
@@ -33,11 +33,13 @@ export default Vue.extend({
   },
   data() {
     return {
-      raffle: []
+      raffle: [],
+      home: ''
     }
   },
   async mounted() {
-    (this as any).raffle = await fetch(getUrl('numbers')).then(response => response.json())
+    (this as any).home = await fetch(getUrl('home')).then(response => response.json()).then(content => content[0]);
+    (this as any).raffle = await fetch(getUrl('numbers')).then(response => response.json());
   },
   async asyncData({$axios}) {
     return {

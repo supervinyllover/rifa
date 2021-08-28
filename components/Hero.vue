@@ -2,10 +2,10 @@
   <header class="hero">
     <div class="hero__section">
       <h1 class="hero__title">
-        Quer ganhar 20 LPS pelo preço de apenas um?
+        {{text.titulo || '...' }}
       </h1>
       <p class="hero__subtitle">
-        Participe de nossa fica com 20 clássicos do rock em vinil. Todos lacrados!
+        {{text.subtitulo || '...'}}
       </p>
       <img
         src="~/static/imavinyllover-logo.png"
@@ -49,6 +49,10 @@ export default Vue.extend({
     }, 2500)
   },
   props: {
+    text: {
+      type: String,
+      required: true
+    },
     discs: {
       type: Array,
       required: true
