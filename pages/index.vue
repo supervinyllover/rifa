@@ -2,7 +2,7 @@
   <div>
     <Hero :discs="discs" :text="home" />
     <DiscsGrid :discs="discs" />
-    <Raffle :raffle="raffle" />
+    <Raffle :raffle="raffle" v-if="raffle.length > 0" />
     <About :about="about" />
     <FAQ :faq="faq" />
     <PageFooter />
