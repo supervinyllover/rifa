@@ -40,7 +40,7 @@
   </header>
 </template>
 <script lang="ts">
-import Vue from 'vue'
+import Vue, {PropOptions} from 'vue'
 
 export default Vue.extend({
   created() {
@@ -50,9 +50,9 @@ export default Vue.extend({
   },
   props: {
     text: {
-      type: String,
+      type: Object,
       required: true
-    },
+    } as PropOptions<{titulo: string; subtitulo: string;}>,
     discs: {
       type: Array,
       required: true

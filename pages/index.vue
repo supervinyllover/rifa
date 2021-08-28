@@ -34,7 +34,7 @@ export default Vue.extend({
   data() {
     return {
       raffle: [],
-      home: ''
+      home: {titulo: '', subtitulo: ''}
     }
   },
   async mounted() {
